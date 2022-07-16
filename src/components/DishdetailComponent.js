@@ -8,8 +8,6 @@ class DishDetail extends Component{
 
         this.state={
 
-            //selectedDish
-
         }
 
     }
@@ -58,7 +56,6 @@ class DishDetail extends Component{
                 </div>                
             );
 
-            //const c = this.props.dish.comments.map();
         }
         else{
             return(
@@ -73,15 +70,16 @@ class DishDetail extends Component{
     render(){
 
         return(
+            <div className="container">
             <div className="row">
                 <div className='col-12 col-md-5 m-1'>
-                    {this.renderDish(this.props.selectedDish)}
+                    {this.renderDish(this.props.dish)}
                 </div>
                 <div className='col-12 col-md-5 m-1'>
-                    {this.renderComments(this.props.selectedDish)}
+                    {this.renderComments(this.props.dish)}
                 </div>
-
-            </div>     
+            </div>  
+            </div>   
       );
     }
 
