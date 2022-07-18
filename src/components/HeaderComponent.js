@@ -24,7 +24,8 @@ class Header extends Component {
         return(
             <>
             <Navbar dark expand="md">
-                <div className="container">
+                <div className='container'>
+                <div className='row'>
                 <NavbarBrand className="mr-auto" href="/"><img src='assets/images/logo.png' height="30" width="41" alt='Ristorante Con Fusion' /></NavbarBrand>
                     <NavbarToggler onClick={this.toggleNav} />
                     <Collapse isOpen={this.state.isNavOpen} navbar>
@@ -51,6 +52,7 @@ class Header extends Component {
                         </NavItem>
                     </Nav>
                     </Collapse>
+                </div>
                 </div>
             </Navbar>
             <div className='Jumbotron'>
