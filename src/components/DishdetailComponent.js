@@ -1,6 +1,7 @@
 import React from "react";
-import {Card, CardImg, CardText, CardBody, CardTitle,Breadcrumb, BreadcrumbItem} from 'reactstrap';
+import {Card, CardImg, CardText, CardBody, CardTitle,Breadcrumb, BreadcrumbItem, Button,Label, ModalBody, ModalHeader, Modal, Form, FormGroup, Input, } from 'reactstrap';
 import { Link } from "react-router-dom";
+import CommentForm from "./CommentForm";
 
 
 function RenderDish({dish}){
@@ -14,6 +15,7 @@ function RenderDish({dish}){
             </Card>
         );
 }
+
 
 function RenderComments({comments}){
     if(comments!=null){
@@ -35,13 +37,6 @@ function RenderComments({comments}){
             );
         
 
-        // return(
-        //     <div>
-        //         <h4>Comments</h4>
-        //         {comments}
-        //     </div>                
-        // );
-
     }
     else{
         return(
@@ -51,10 +46,7 @@ function RenderComments({comments}){
 }
 
 
-
-
 const DishDetail = (props) =>{
-
     return(
         <div className="container">
             <div className='row'>
@@ -73,6 +65,7 @@ const DishDetail = (props) =>{
             </div>
             <div className='col-12 col-md-5 m-1'>
                 <RenderComments comments = {props.comments} />
+                <CommentForm />
             </div>
         </div>  
         </div>   
