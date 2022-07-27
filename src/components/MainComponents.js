@@ -8,7 +8,7 @@ import Footer from './FooterComponent';
 import Home from './HomeComponent';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux/es/exports';
-import { addcomment } from '../redux/ActionCreaters';
+import { addComment } from '../redux/ActionCreaters';
 
 const mapStateToProps = state => {
   return {
@@ -19,8 +19,8 @@ const mapStateToProps = state => {
   }
 }
 
-const mapDispatchToProps = (dispatch) => ({
-  addcomment: (dishId, rating, author, comment) => dispatch(addcomment(dishId, rating, author, comment))
+const mapDispatchToProps = dispatch => ({
+  addComment: (dishId, rating, author, comment) => dispatch(addComment(dishId, rating, author, comment))
 });
 
 class Main extends Component {
@@ -45,7 +45,7 @@ class Main extends Component {
       return(
           <DishDetail dish={this.props.dishes.filter((dish) => dish.id === parseInt(match.params.dishId,10))[0]} 
             comments={this.props.comments.filter((comment) => comment.dishId === parseInt(match.params.dishId,10))} 
-            addcomment={this.props.addcomment} />
+            addComment={this.props.addComment} />
         
       );
     };
