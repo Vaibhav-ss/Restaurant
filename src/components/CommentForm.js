@@ -31,9 +31,9 @@ class CommentForm extends Component{
         });
     }
 
-    handleSubmit(event) {
+    handleSubmit() {
         alert("Current State is: " + "Author = " + JSON.stringify(this.state.name) + ", Rating = " + JSON.stringify(this.state.rating) + ", Comments = " + JSON.stringify(this.state.comments)) ;
-        event.preventDefault();
+        this.props.addComment(this.props.dishId, this.state.rating, this.state.name, this.state.comments)
     }
 
       toggleModal() {
@@ -71,7 +71,7 @@ class CommentForm extends Component{
                 <ModalHeader >Submit Comment 
                 </ModalHeader>
                 <ModalBody>
-                    <Form onSubmit={this.handleSubmit} >
+                    <Form onSubmit= {(values) => this.handleSubmit(values)} >
                         <FormGroup>
                         <label className='mr-5' htmlfor="rating">Rating  </label>
                         <select className='col-12' name="rating" id="rating" value={this.state.rating} onChange={this.handleInputChange}>
