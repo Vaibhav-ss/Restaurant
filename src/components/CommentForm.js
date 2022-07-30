@@ -32,8 +32,7 @@ class CommentForm extends Component{
     }
 
     handleSubmit() {
-        alert("Current State is: " + "Author = " + JSON.stringify(this.state.name) + ", Rating = " + JSON.stringify(this.state.rating) + ", Comments = " + JSON.stringify(this.state.comments)) ;
-        this.props.addComment(this.props.dishId, this.state.rating, this.state.name, this.state.comments)
+        this.props.postComment(this.props.dishId, this.state.rating, this.state.name, this.state.comments)
     }
 
       toggleModal() {
