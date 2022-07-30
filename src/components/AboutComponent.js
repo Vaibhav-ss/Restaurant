@@ -3,6 +3,7 @@ import { Breadcrumb, BreadcrumbItem, Card, CardBody, CardHeader, Media } from 'r
 import { Link } from 'react-router-dom';
 import { baseUrl } from '../shared/baseUrl';
 import { Loading } from './LoadingComponent';
+import { motion } from 'framer-motion';
 
 function RenderLeader({leader}){
     return(
@@ -101,11 +102,11 @@ function About(props) {
                 <div className="col-12">
                     <h2>Corporate Leadership</h2>
                 </div>
-                <div className="col-12">
+                <motion.div className="col-12" initial= {{opacity: 0, translateY:-50}} animate = {{opacity: 1, translateY: 0}} transition= {{duration: 0.3}} > 
                     <Media list>
                         {leaders}
                     </Media>
-                </div>
+                </motion.div>
             </div>
         </div>
     );
